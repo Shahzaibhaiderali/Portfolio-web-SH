@@ -9,12 +9,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: #111; /* Set background color to a dark theme */
+   background-color: #000000;
 }
 
 /* Header styles */
 header {
-    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    background: transparent;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -23,10 +24,10 @@ header {
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 2px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
+    font-weight: bold; 
+    font-family: 'Dancing Script', cursive;
 
 }
 ul.nav {
@@ -59,8 +60,10 @@ ul.nav a:hover {
 .menu-toggle {
     display: block; /* Always display the hamburger menu icon */
     font-size: 24px;
+    padding-left: 20px;
+    margin: 8px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* Set color for the icons based on their type */
@@ -81,31 +84,37 @@ ul.nav a:hover {
 }
 
 .fa-file {
-    color: #9b59b6;
+    color: #f39c12;
 }
 
 .fa-blog {
     color: #1abc9c;
 }
+/* Add this CSS for the hamburger icon */
+.fa-bars {
+    cursor: pointer;
+}
+
+/* Media query for the hamburger menu */
 @media (max-width: 768px) {
     ul.nav {
-        display: none;
+        display: none; /* Hide the regular menu */
         background: rgba(0, 0, 0, 0.7);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
-        padding: 20px 0; /* Add padding to space out items */
+        padding: 20px 0;
     }
 
     ul.nav.active {
         display: flex;
-        flex-direction: column; /* Display list items vertically */
-        align-items: center; /* Center the list items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     ul.nav li {
-        margin: 10px 0; /* Add spacing between list items */
+        margin: 10px 0;
     }
     
     .menu-toggle {
@@ -120,6 +129,15 @@ ul.nav a:hover {
     }
 }
 
+section {
+    background-image: url(''); /* Replace 'your-image.jpg' with the URL or path to your image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Fixes the background when scrolling */
+    /* You can also specify other background properties like background-position, background-color, etc. */
+}
+
+
 /* Common styles for the profile section */
 .profile-section {
     display: flex;
@@ -132,7 +150,7 @@ ul.nav a:hover {
 .text-icons-container {
     flex: 2;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 /* Text container styles */
@@ -143,15 +161,16 @@ ul.nav a:hover {
 
 /* Name text styles */
 .name-text {
-    color: #ffffff;
+    color:#f8f8f8;
+    padding-left: 20px;
     margin: 10px;
     transition: color 0.3s; /* Text color animation */
 }
 
 /* Different text color for "I am" */
 .name-text i.fa-hand-shake {
-    background-color: #1abc9c;
-    color: yellow;
+    background-color: #f9fbfd;
+    color: rgb(255, 255, 255);
 }
 
 /* Different text color for "Shahzaib Haider Ali" */
@@ -161,14 +180,17 @@ ul.nav a:hover {
 
 /* Different text color for "Web Developer" */
 .web-developer {
-    color: #FF5733; /* Custom text color */
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #ffffff; /* Custom text color */
 }
 
 /* Styles for icons */
 .animated-icon {
+    padding-left: 25px;
     font-size: 30px;
     margin: 20px;
-    color: #007bff; /* Default icon color */
+    color: #f9fbfd; /* Default icon color */
     transition: color 0.3s; /* Icon color animation */
 }
 /* Button styles */
@@ -183,7 +205,11 @@ ul.nav a:hover {
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
-    background: #55af39;
+    background: rgb(63,94,251);
+    background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -205,7 +231,7 @@ ul.nav a:hover {
 /* Style for the image container */
 .image-container {
     flex: 1;
-    text-align: right;
+    text-align: center;
 }
 
 /* Keyframe animation for the text color change */
@@ -214,7 +240,11 @@ ul.nav a:hover {
         color: #f8f8f8; /* Initial text color for animation */
     }
     100% {
-        color: #33FF57; /* Final text color for animation */
+        color: rgb(63,94,251);
+        color: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+        color: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+        color: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
     }
 }
 
@@ -222,15 +252,16 @@ ul.nav a:hover {
 .web-developer,
 .animated-icon,
 .name-text:last-child {
+    font-size: 30px;
     animation: textColorChange 2s infinite alternate; /* Animation properties */
 }
 
 /* Social Icons Column Style */
 .social-icons ul {
-    font-size: 50px;
+    font-size: 40px;
     display: flex;
     align-items: center;
-    padding-left: 40px;
+    padding-left: 30px;
     margin: 10px;
 }
 
@@ -238,6 +269,39 @@ ul.nav a:hover {
     list-style: none;
     margin-bottom: 10px; /* Adjust the spacing between social icons */
 }
+.gold {
+    font-size: 50px;
+    color: gold; /* Change the icon color to gold */
+    position: relative; /* Set the position to relative */
+    z-index: -1; /* Move the .gold element to the back */
+}
+.social-icons ul li a i:hover {
+    transform: scale(1.1); /* Add a scale effect on hover */
+}
+.icon-container {
+    display: flex;
+    list-style: none;
+}
+
+.icon-container i {
+    font-size: 50px;
+    max-width: 50px;
+    transition: transform 0.3s;
+    margin: 10px; 
+    padding-right: 20px;/* Add spacing between icons */
+}
+
+.icon-container i:last-child {
+    margin-right: 0; /* Remove spacing for the last icon */
+}
+
+.icon-container i:hover {
+    transform: scale(1.1);
+}
+
+
+
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -249,7 +313,7 @@ ul.nav a:hover {
         flex-direction: column;
     }
     .name-text {
-        color: #FF5733; /* Change color for "I am" */
+        color: #ffffff; /* Change color for "I am" */
     }
     .name-text:last-child {
         color: #33FF57; /* Change color for "Shahzaib Ali" */
