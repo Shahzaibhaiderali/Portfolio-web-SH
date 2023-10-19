@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #111; /* Set background color to a dark theme */
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+
+}
+ul.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+    align-items: center; /* Center the list items vertically */
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav li {
+    margin-right: 20px;
+}
+
+ul.nav a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s; /* Add a smooth transition effect */
+}
+
+/* Apply hover effect */
+ul.nav a:hover {
+    font-weight: bold;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: block; /* Always display the hamburger menu icon */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Set color for the icons based on their type */
+.fa-house {
+    color: #f39c12;
+}
+
+.fa-user {
+    color: #3498db;
+}
+
+.fa-phone {
+    color: #e74c3c;
+}
+
+.fa-code {
+    color: #2ecc71;
+}
+
+.fa-file {
+    color: #9b59b6;
+}
+
+.fa-blog {
+    color: #1abc9c;
+}
+@media (max-width: 768px) {
+    ul.nav {
+        display: none;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0; /* Add padding to space out items */
+    }
+
+    ul.nav.active {
+        display: flex;
+        flex-direction: column; /* Display list items vertically */
+        align-items: center; /* Center the list items horizontally */
+    }
+
+    ul.nav li {
+        margin: 10px 0; /* Add spacing between list items */
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Common styles for the profile section */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px 20px 10px;
+}
+
+/* Text and icon container styles */
+.text-icons-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+/* Text container styles */
+.text-container {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Name text styles */
+.name-text {
+    color: #ffffff;
+    margin: 10px;
+    transition: color 0.3s; /* Text color animation */
+}
+
+/* Different text color for "I am" */
+.name-text i.fa-hand-shake {
+    background-color: #1abc9c;
+    color: yellow;
+}
+
+/* Different text color for "Shahzaib Haider Ali" */
+.name-text:last-child {
+    color: rgb(243, 245, 243); /* Change color for "Shahzaib Haider Ali" text */
+}
+
+/* Different text color for "Web Developer" */
+.web-developer {
+    color: #FF5733; /* Custom text color */
+}
+
+/* Styles for icons */
+.animated-icon {
+    font-size: 30px;
+    margin: 20px;
+    color: #007bff; /* Default icon color */
+    transition: color 0.3s; /* Icon color animation */
+}
+/* Button styles */
+.download-button {
+    text-align: center;
+}
+
+/* Animated text when button is hovered */
+.animated-text a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #55af39;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect for the button */
+.animated-text a:hover {
+    color: #007bff;
+    background: #fff; /* Change background color on hover */
+}
+
+
+/* Hover effect for icons */
+.animated-icon:hover {
+    color: #333; /* Hover icon color */
+}
+
+/* Style for the image container */
+.image-container {
+    flex: 1;
+    text-align: right;
+}
+
+/* Keyframe animation for the text color change */
+@keyframes textColorChange {
+    0% {
+        color: #f8f8f8; /* Initial text color for animation */
+    }
+    100% {
+        color: #33FF57; /* Final text color for animation */
+    }
+}
+
+/* Apply the animation to specific elements */
+.web-developer,
+.animated-icon,
+.name-text:last-child {
+    animation: textColorChange 2s infinite alternate; /* Animation properties */
+}
+
+/* Social Icons Column Style */
+.social-icons ul {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    margin: 10px;
+}
+
+.social-icons li {
+    list-style: none;
+    margin-bottom: 10px; /* Adjust the spacing between social icons */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-icons-container {
+        flex-direction: column;
+    }
+    .name-text {
+        color: #FF5733; /* Change color for "I am" */
+    }
+    .name-text:last-child {
+        color: #33FF57; /* Change color for "Shahzaib Ali" */
+    }
+    .image-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+}
