@@ -31,16 +31,14 @@ header {
 
 }
 ul.nav {
-    list-style: none;
     display: flex;
-    justify-content: center; /* Center the list items horizontally */
-    align-items: center; /* Center the list items vertically */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
 ul.nav li {
-    margin-right: 20px;
+    margin: 0 20px;
 }
 
 ul.nav a {
@@ -94,17 +92,19 @@ ul.nav a:hover {
 .fa-bars {
     cursor: pointer;
 }
-
-/* Media query for the hamburger menu */
 @media (max-width: 768px) {
     ul.nav {
-        display: none; /* Hide the regular menu */
+        display: none; /* Hide the regular menu on small screens */
         background: rgba(0, 0, 0, 0.7);
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
         padding: 20px 0;
+        overflow-y: auto;
     }
 
     ul.nav.active {
@@ -116,26 +116,27 @@ ul.nav a:hover {
     ul.nav li {
         margin: 10px 0;
     }
-    
+
     .menu-toggle {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 10px;
         right: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+        z-index: 2;
     }
 }
-
 section {
-    background-image: url(''); /* Replace 'your-image.jpg' with the URL or path to your image */
+    background-image: url('assets/Background/code 11.jpg'); /* Replace 'your-image.jpg' with the URL or path to your image */
     background-size: cover; /* Ensures the image covers the entire section */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Fixes the background when scrolling */
     /* You can also specify other background properties like background-position, background-color, etc. */
 }
+
 
 
 /* Common styles for the profile section */
@@ -146,181 +147,160 @@ section {
     padding: 20px 10px 20px 10px;
 }
 
-/* Text and icon container styles */
-.text-icons-container {
-    flex: 2;
-    display: flex;
-    justify-content: left;
-}
-
-/* Text container styles */
-.text-container {
-    text-align: center;
-    font-size: 25px;
-}
-
-/* Name text styles */
-.name-text {
-    color:#f8f8f8;
-    padding-left: 20px;
-    margin: 10px;
-    transition: color 0.3s; /* Text color animation */
-}
-
-/* Different text color for "I am" */
-.name-text i.fa-hand-shake {
-    background-color: #f9fbfd;
+/* CSS for the text animation */
+.name h1 {
+    font-weight: bold; /* Make the text bold */
+    font-size: 36px; /* Increase the font size */
+    color: rgb(255, 255, 255); /* Set the text color to white */
+    margin-bottom: 10px; /* Add space below the text */
+  }
+  
+  .name h1 span {
     color: rgb(255, 255, 255);
-}
-
-/* Different text color for "Shahzaib Haider Ali" */
-.name-text:last-child {
-    color: rgb(243, 245, 243); /* Change color for "Shahzaib Haider Ali" text */
-}
-
-/* Different text color for "Web Developer" */
-.web-developer {
-    font-size: 30px;
-    letter-spacing: 3px;
-    color: #ffffff; /* Custom text color */
-}
-
-/* Styles for icons */
-.animated-icon {
-    padding-left: 25px;
-    font-size: 30px;
-    margin: 20px;
-    color: #f9fbfd; /* Default icon color */
-    transition: color 0.3s; /* Icon color animation */
-}
-/* Button styles */
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(1em);
+    animation: textAnimation 6s linear infinite; /* Set animation to run continuously with a 1-second gap */
+  }
+  
+  @keyframes textAnimation {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(1em);
+      color: ;
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling for "Web Developer" */
+  .name h2 {
+    font-weight: medium; /* Set to medium */
+    color: white; /* Set the text color to white */
+    margin-top: 10px; /* Add space above the text */
+  }
+  
+  /* Additional styling for the gold hand icon */
+  .fa-solid.fa-hand.fa-shake.gold {
+    color: rgba(255, 255, 255, 0.87);
+  }
+  
+ /* Styling for the CV button */
 .download-button {
     text-align: center;
-}
-
-/* Animated text when button is hovered */
-.animated-text a {
-    display: inline-block;
-    text-decoration: none;
+    margin-top: 20px; /* Add space above the button */
+  }
+  
+  .download-button button {
+    background-color: #007BFF;
+    color: white;
     padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    background: rgb(63,94,251);
-    background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
-    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-/* Hover effect for the button */
-.animated-text a:hover {
-    color: #007bff;
-    background: #fff; /* Change background color on hover */
-}
-
-
-/* Hover effect for icons */
-.animated-icon:hover {
-    color: #333; /* Hover icon color */
-}
-
-/* Style for the image container */
-.image-container {
-    flex: 1;
+    font-size: 18px;
+    margin: 20px 0; /* Move the button below the text */
+    transition: margin 0.3s ease, background-color 0.3s ease; /* Smooth transition for margin and background-color */
+  }
+  
+  .download-button button a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Hover effect for the button */
+  .download-button button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+  }
+  
+  /* Styling for the icon container */
+  .icon-container {
     text-align: center;
-}
-
-/* Keyframe animation for the text color change */
-@keyframes textColorChange {
-    0% {
-        color: #f8f8f8; /* Initial text color for animation */
-    }
-    100% {
-        color: rgb(63,94,251);
-        color: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-        color: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-        color: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
-    }
-}
-
-/* Apply the animation to specific elements */
-.web-developer,
-.animated-icon,
-.name-text:last-child {
-    font-size: 30px;
-    animation: textColorChange 2s infinite alternate; /* Animation properties */
-}
-
-/* Social Icons Column Style */
-.social-icons ul {
+    margin-top: 20px; /* Add space above the icons */
+  }
+  
+  .icon-container i {
     font-size: 40px;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
     margin: 10px;
+  }
+  
+  /* Additional styles can be added for responsiveness and other customizations */
+/* Social icons styling */
+.social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .social-icons li {
-    list-style: none;
-    margin-bottom: 10px; /* Adjust the spacing between social icons */
-}
-.gold {
-    font-size: 50px;
-    color: gold; /* Change the icon color to gold */
-    position: relative; /* Set the position to relative */
-    z-index: -1; /* Move the .gold element to the back */
-}
-.social-icons ul li a i:hover {
-    transform: scale(1.1); /* Add a scale effect on hover */
-}
-.icon-container {
-    display: flex;
-    list-style: none;
+    margin: 0 10px;
 }
 
-.icon-container i {
-    font-size: 50px;
-    max-width: 50px;
-    transition: transform 0.3s;
-    margin: 10px; 
-    padding-right: 20px;/* Add spacing between icons */
+.social-icons a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 24px;
 }
 
-.icon-container i:last-child {
-    margin-right: 0; /* Remove spacing for the last icon */
+/* Add bounce animation to social icons */
+.social-icon i {
+    animation: bounce 2s infinite;
 }
 
-.icon-container i:hover {
-    transform: scale(1.1);
-}
-
-
-
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .profile-section {
-        flex-direction: column;
-        align-items: center;
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-    .text-icons-container {
-        flex-direction: column;
+    50% {
+        transform: translateY(-10px);
     }
-    .name-text {
-        color: #ffffff; /* Change color for "I am" */
-    }
-    .name-text:last-child {
-        color: #33FF57; /* Change color for "Shahzaib Ali" */
-    }
-    .image-container {
-        text-align: center;
-        margin-top: 20px;
-    }
-    
 }
+  
+/* Media query for even smaller screens (mobiles) */
+@media (max-width: 480px) {
+    .name h1 {
+        font-size: 24px;
+    }
+
+    .name h2 {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .download-button button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .social-icons ul {
+        flex-direction: row; /* Restore horizontal layout for social icons */
+    }
+
+    .icon-container i {
+        font-size: 28px;
+        margin: 5px;
+    }
+}
+/* Default styles for the image */
+.image-container {
+    text-align: center; /* Center the image horizontally */
+    margin-top: 20px; /* Add spacing above the image */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove any extra space below the image */
+    margin: 0 auto; /* Center the image horizontally within its container */
+  }
+  
+  /* Media query for smaller screens (tablets and mobiles) */
+  @media (max-width: 768px) {
+    .image-container img {
+      max-width: 80%; /* Reduce the image's max width for smaller screens */
+    }
+  }
+  
