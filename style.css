@@ -10,7 +10,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url('assets/Background/animation3.gif');
     /* Replace 'your-image.jpg' with the URL or path to your image */
     background-size: cover;
     /* Ensures the image covers the entire section */
@@ -386,10 +385,7 @@ section {
     }
 }
 /* Reset some default styles */
-h1, p {
-    margin: 0;
-    padding: 0;
-}
+
 
 .container {
     background-image: url('assets/blogs/1.jpg'); /* Set the background image here */
@@ -440,4 +436,21 @@ p {
     text-align: left;
     font-family: 'Roboto Slab', serif;
 
+}
+/* Media query for smaller screens (adjust breakpoints as needed) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+    }
+
+    .profile-image img {
+        width: 150px; /* Adjust image size for smaller screens */
+        height: 150px;
+    }
+
+    .content {
+        width: 80%; /* Adjust the text container width for smaller screens */
+        padding: 10px;
+    }
 }
