@@ -7,22 +7,9 @@
 
 /* Reset some default styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    /* Replace 'your-image.jpg' with the URL or path to your image */
-    background-size: cover;
-    /* Ensures the image covers the entire section */
-    background-repeat: no-repeat;
-    /* Prevents the image from repeating */
-    background-attachment: fixed;
-    
-}
-/* Add a media query for responsiveness */
-@media (max-width: 768px) {
-    body {
-        background-size: contain; /* Change to 'contain' for smaller screens */
-    }
+padding: 0;
+margin: 0;
+background-color: #000000;
 }
 
 /* Header styles */
@@ -152,24 +139,35 @@ ul.nav a:hover {
 }
 
 section {
-    background-image: url('assets/Background/animation3.gif');
+    background-image: url('assets/Background/animation4.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* Media query for larger screens (desktops and laptops) */
+@media (min-width: 769px) {
+    section {
+        /* Add specific styles for larger screens here */
+        background-size: cover; /* Example style for larger screens */
+    }
+}
 
-/* Add media queries for responsiveness */
+/* Media query for smaller screens (tablets and small laptops) */
 @media (max-width: 768px) {
     section {
-        background-size: cover;
+        /* Add specific styles for smaller screens here */
+        background-size: contain; /* Example style for smaller screens */
     }
 }
 
+/* Media query for very small screens (mobile devices) */
 @media (max-width: 480px) {
     section {
-        background-size: contain;
+        /* Add specific styles for very small screens here */
+        background-size: contain; /* Example style for very small screens */
     }
 }
+
 
 
 
@@ -382,75 +380,5 @@ section {
     .image-container img {
         max-width: 80%;
         /* Reduce the image's max width for smaller screens */
-    }
-}
-/* Reset some default styles */
-
-
-.container {
-    background-image: url('assets/blogs/1.jpg'); /* Set the background image here */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.profile-image {
-    width: 40%; /* Adjust image width as needed */
-    padding: 20px;
-    text-align: center;
-}
-
-.profile-image img {
-    width: 200px; /* Set the image size to "large" */
-    height: 200px; /* Set the image size to "large" */
-    border-radius: 50%;
-}
-
-.content {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for text */
-    width: 60%; /* Adjust the width of the text container */
-    padding: 20px;
-}
-
-h1 {
-    font-size: 30px;
-    color: white;
-    text-align: left;
-    font-weight: bold;
-    margin: 10px 0;
-    font-family: 'Roboto Slab', serif;
-
-    
-}
-
-p {
-    font-size: 20px;
-    line-height: 1.6;
-    font-weight: bold;
-    color: white;
-    margin: 10px 0;
-    text-align: left;
-    font-family: 'Roboto Slab', serif;
-
-}
-/* Media query for smaller screens (adjust breakpoints as needed) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-        align-items: center;
-    }
-
-    .profile-image img {
-        width: 150px; /* Adjust image size for smaller screens */
-        height: 150px;
-    }
-
-    .content {
-        width: 80%; /* Adjust the text container width for smaller screens */
-        padding: 10px;
     }
 }

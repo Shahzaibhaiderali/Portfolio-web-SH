@@ -19,17 +19,22 @@
 </head>
 
 <body>
-    <!-- Header start -->
+   
+    <div id="content">
+        <section id="home">
+             <!-- Header start -->
     <header>
         <div class="logo">SHAHZAIB</div>
-        <ul class="nav">
-            <li><a href="#">Home <i class="fa-sharp fa-solid fa-house fa-bounce"></i></a></li>
-            <li><a href="#">About Me <i class="fa-sharp fa-solid fa-user fa-bounce"></i></a></li>
-            <li><a href="#">Contact <i class="fa-sharp fa-solid fa-phone fa-bounce"></i></a></li>
-            <li><a href="#">Skills <i class="fa-sharp fa-solid fa-code fa-bounce"></i></a></li>
-            <li><a href="#">Portfolio <i class="fa-sharp fa-regular fa-file fa-bounce"></i></a></li>
-            <li><a href="#">Blogs <i class="fa-sharp fa-solid fa-blog fa-bounce"></i></a></li>
-        </ul>
+        <nav>
+            <ul class="nav">
+                <li><a href="#" onclick="scrollToSection('home')">Home <i class="fa-sharp fa-solid fa-house fa-bounce"></i></a></li>
+                <li><a href="#" onclick="scrollToSection('about')">About Me <i class="fa-sharp fa-solid fa-user fa-bounce"></i></a></li>
+                <li><a href="#" onclick="scrollToSection('portfolio')">Portfolio <i class="fa-sharp fa-regular fa-file fa-bounce"></i></a></li>
+                <li><a href="#" onclick="scrollToSection('skills')">Skills <i class="fa-sharp fa-solid fa-code fa-bounce"></i></a></li>
+                <li><a href="#" onclick="scrollToSection('blogs')">Blogs <i class="fa-sharp fa-solid fa-blog fa-bounce"></i></a></li>
+                <li><a href="#" onclick="scrollToSection('contact')">Contact <i class="fa-sharp fa-solid fa-phone fa-bounce"></i></a></li>
+            </ul>
+        </nav>
         <div class="menu-toggle">
             <i class=" fa-sharp fa-solid fa-bars"></i>
         </div>
@@ -75,20 +80,24 @@
             <img src="assets/user img/profile-pic.png" alt="My Image">
         </div>
     </section>
-    <div class="container">
-        <div class="profile-image">
-            <img src="assets/user img/profile-pic.png" alt="Shahzaib Haider Ali">
-        </div>
-        <div class="content">
-            <h1>About Me: Shahzaib Haider Ali</h1>
-            <p>Hello, I'm Shahzaib Haider Ali, a passionate and dedicated Frontend Developer with a strong commitment to
-                crafting clean, efficient, and visually appealing web experiences. With a deep love for technology and a
-                keen eye for design, I bring a wealth of experience and expertise to the field of web development.</p>
-            <!-- ... Your existing content ... -->
-        </div>
+        </section>
+        <section id="about">
+            
+        </section>
+        <section id="portfolio">
+            <!-- Portfolio Section Content -->
+        </section>
+        <section id="skills">
+            <!-- Skills Section Content -->
+        </section>
+        <section id="blogs">
+            <!-- Blogs Section Content -->
+        </section>
+        <section id="contact">
+           
+        </section>
     </div>
-
-
+    
     <script src="https://kit.fontawesome.com/b60b55ed64.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
