@@ -500,3 +500,90 @@ p {
         height: 80px; /* Adjust the icon box height for smaller screens */
     }
 }
+/* Default styles for the portfolio section */
+#portfolio {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styles for portfolio items */
+.portfolio-item {
+    border: 2px solid #fff;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+    width: calc(25% - 20px);
+    transition: transform 0.2s;
+    animation: fadeInUp 1s ease;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Rainbow animation */
+@keyframes rainbow {
+    0% {
+        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+        border-image-slice: 1;
+    }
+    100% {
+        border-image: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
+        border-image-slice: 1;
+    }
+}
+
+/* Apply rainbow animation to the portfolio items */
+.portfolio-item {
+    animation: rainbow 5s linear infinite;
+}
+
+/* Fade-in animation after scrolling */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .portfolio-item {
+        width: calc(33.33% - 20px); /* 3 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        width: calc(100% - 20px); /* 1 card per row on even smaller screens */
+    }
+}
