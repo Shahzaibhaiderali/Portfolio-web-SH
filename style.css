@@ -19,7 +19,7 @@ body {
 /* Media query for larger screens (desktops and laptops) */
 @media (min-width: 769px) {
     body {
-        /* Add specific styles for larger screens here */
+        background-size: cover; /* Add specific styles for larger screens here */
     }
 }
 
