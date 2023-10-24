@@ -5,12 +5,31 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Reset some default styles */
+/* Default style for all screens */
 body {
-padding: 0;
-margin: 0;
-background-color: #000000;
+    padding: 0;
+    margin: 0;
+    background-image: url('assets/Background/Img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
+
+/* Media query for larger screens (desktops and laptops) */
+@media (min-width: 769px) {
+    body {
+        /* Add specific styles for larger screens here */
+    }
+}
+
+/* Media query for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    body {
+        background-size: auto; /* Adjust background size for smaller screens */
+    }
+}
+
 
 /* Header styles */
 header {
@@ -49,7 +68,7 @@ ul.nav a {
     color: #fff;
     text-decoration: none;
     transition: all 0.3s;
-    
+
     /* Add a smooth transition effect */
 }
 
@@ -138,33 +157,27 @@ ul.nav a:hover {
     }
 }
 
+/* Default style for all screens */
 section {
-    background-image: url('assets/Background/animation4.gif');
+    background-image: url('assets/Background/Img1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
 }
+
 /* Media query for larger screens (desktops and laptops) */
 @media (min-width: 769px) {
     section {
         /* Add specific styles for larger screens here */
-        background-size: cover; /* Example style for larger screens */
+        background-size: cover; /* Example: Maintain background cover on larger screens */
     }
 }
 
-/* Media query for smaller screens (tablets and small laptops) */
+/* Media query for smaller screens (mobile devices) */
 @media (max-width: 768px) {
     section {
-        /* Add specific styles for smaller screens here */
-        background-size: contain; /* Example style for smaller screens */
-    }
-}
-
-/* Media query for very small screens (mobile devices) */
-@media (max-width: 480px) {
-    section {
-        /* Add specific styles for very small screens here */
-        background-size: contain; /* Example style for very small screens */
+        background-size: auto; /* Adjust background size for smaller screens */
     }
 }
 
@@ -380,5 +393,110 @@ section {
     .image-container img {
         max-width: 80%;
         /* Reduce the image's max width for smaller screens */
+    }
+}
+
+
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Set your desired background color */
+    color: white;
+    padding: 20px 10px 20px 10px;
+    padding-left: 10px;
+   
+}
+
+.about-left img {
+    max-width: 100%;
+    animation: slideIn 2s ease;
+}
+
+.about-right {
+    max-width: 60%;
+    margin-left: 20px; /* Add margin to create space */
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin: 10px;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    
+    .about-right {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .about-left img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Style for the icon container */
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px 0; /* Add spacing as needed */
+}
+
+/* Style for each icon box */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Hover effect for the icon boxes */
+.icon-box:hover {
+    transform: scale(1.1);
+}
+
+/* Media query for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    .icon-box {
+        width: 80px; /* Adjust the icon box width for smaller screens */
+        height: 80px; /* Adjust the icon box height for smaller screens */
     }
 }
