@@ -15,3 +15,24 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
     }
 }
 
+const skills = document.querySelectorAll('.skill');
+
+function checkSkills() {
+  skills.forEach((skill) => {
+    const skillPosition = skill.getBoundingClientRect().top;
+    const scrollPosition = window.innerHeight / 1.3;
+
+    if (skillPosition < scrollPosition) {
+      const rating = skill.querySelector('.rating');
+      const percent = rating.getAttribute('data-percent');
+      rating.style.width = percent + '%';
+    }
+  });
+}
+
+window.addEventListener('scroll', checkSkills);
+window.addEventListener('resize', checkSkills);
+
+// Initial check
+checkSkills();
+

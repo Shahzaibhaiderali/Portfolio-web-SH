@@ -9,26 +9,18 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url('assets/Background/Img1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
+    background-color: #000000;
 
-/* Media query for larger screens (desktops and laptops) */
-@media (min-width: 769px) {
-    body {
-        background-size: cover; /* Add specific styles for larger screens here */
-    }
 }
 
 /* Media query for smaller screens (mobile devices) */
 @media (max-width: 768px) {
     body {
-        background-size: auto; /* Adjust background size for smaller screens */
+        background-size: 100% auto;
+        /* Set background size to cover full width */
     }
 }
+
 
 
 /* Header styles */
@@ -39,13 +31,16 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    z-index: 2;
 }
 
-.logo {
+.logo a {
     font-size: 25px;
     letter-spacing: 2px;
     font-weight: bold;
     font-family: 'Roboto Slab', serif;
+    color: #ffffff;
+    text-decoration: none;
 
 }
 
@@ -80,9 +75,8 @@ ul.nav a:hover {
 /* Hamburger menu styles */
 .menu-toggle {
     display: block;
-    /* Always display the hamburger menu icon */
     font-size: 24px;
-    padding-left: 20px;
+    padding-left: 20px 10px 20px 10px;
     margin: 8px;
     cursor: pointer;
     z-index: 3;
@@ -157,35 +151,6 @@ ul.nav a:hover {
     }
 }
 
-/* Default style for all screens */
-section {
-    background-image: url('assets/Background/Img1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
-/* Media query for larger screens (desktops and laptops) */
-@media (min-width: 769px) {
-    section {
-        /* Add specific styles for larger screens here */
-        background-size: cover; /* Example: Maintain background cover on larger screens */
-    }
-}
-
-/* Media query for smaller screens (mobile devices) */
-@media (max-width: 768px) {
-    section {
-        background-size: auto; /* Adjust background size for smaller screens */
-    }
-}
-
-
-
-
-
-/* Common styles for the profile section */
 .profile-section {
     display: flex;
     justify-content: space-between;
@@ -251,6 +216,7 @@ section {
     /* Set the text color to white */
     margin-top: 14px;
     font-family: 'Roboto Slab', serif;
+    padding-left: 10px;
     /* Add space above the text */
 }
 
@@ -369,6 +335,7 @@ section {
     }
 }
 
+
 /* Default styles for the image */
 .image-container {
     text-align: center;
@@ -396,26 +363,23 @@ section {
     }
 }
 
-
 #about {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Set your desired background color */
     color: white;
-    padding: 20px 10px 20px 10px;
-    padding-left: 10px;
-   
+    padding: 20px;
 }
 
 .about-left img {
     max-width: 100%;
     animation: slideIn 2s ease;
+    border: 2px solid transparent;
+    border-radius: 10px;
 }
 
 .about-right {
-    max-width: 60%;
-    margin-left: 20px; /* Add margin to create space */
+    max-width: 50%;
 }
 
 h1 {
@@ -423,7 +387,6 @@ h1 {
     letter-spacing: 2px;
     margin: 10px;
     font-family: 'Roboto Slab', serif;
-
 }
 
 p {
@@ -434,10 +397,40 @@ p {
     font-weight: bold;
 }
 
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    /* Set the border color */
+    border-radius: 50%;
+    /* Rounded border */
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    animation: slideIn 2s ease;
+    /* Apply slide animation to the icons */
+}
+
+.icon-box:hover {
+    transform: scale(1.1);
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
     }
+
     to {
         transform: translateX(0);
     }
@@ -447,68 +440,44 @@ p {
 @media screen and (max-width: 768px) {
     #about {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
     }
-    
+
+    .about-left {
+        max-width: 100%;
+        /* Full width for the image on smaller screens */
+    }
+
     .about-right {
         max-width: 100%;
-        margin-left: 0;
+        /* Full width for the text container on smaller screens */
     }
-    
-    .about-left img {
+
+    .icon-container {
+        flex-direction: row;
+        /* Align icons in a row on smaller screens */
         max-width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    p {
-        font-size: 1rem;
+        /* Full width for the icon container */
     }
 }
 
-/* Style for the icon container */
-.icon-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 20px 0; /* Add spacing as needed */
-}
-
-/* Style for each icon box */
-.icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-/* Hover effect for the icon boxes */
-.icon-box:hover {
-    transform: scale(1.1);
-}
-
-/* Media query for smaller screens (mobile devices) */
-@media (max-width: 768px) {
-    .icon-box {
-        width: 80px; /* Adjust the icon box width for smaller screens */
-        height: 80px; /* Adjust the icon box height for smaller screens */
-    }
-}
-/* Default styles for the portfolio section */
+/* Styles for the Portfolio section */
 #portfolio {
     padding: 20px;
     text-align: center;
 }
 
-/* Styles for portfolio items */
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: #ffffff;
+    letter-spacing: 4px;
+
+}
+
 .portfolio-item {
     border: 2px solid #fff;
+    /* Add a white border to each portfolio item */
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -518,6 +487,8 @@ p {
     width: calc(25% - 20px);
     transition: transform 0.2s;
     animation: fadeInUp 1s ease;
+    background: transparent;
+    /* Remove background color */
 }
 
 .portfolio-item img {
@@ -533,36 +504,24 @@ p {
     border: none;
     border-radius: 5px;
     margin-right: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
 }
 
+/* Hover effect for the button */
 .button:hover {
     background-color: #0056b3;
+    transform: scale(1.1);
+    /* Increase the size on hover */
 }
 
-/* Rainbow animation */
-@keyframes rainbow {
-    0% {
-        border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-        border-image-slice: 1;
-    }
-    100% {
-        border-image: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
-        border-image-slice: 1;
-    }
-}
 
-/* Apply rainbow animation to the portfolio items */
-.portfolio-item {
-    animation: rainbow 5s linear infinite;
-}
-
-/* Fade-in animation after scrolling */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -572,18 +531,96 @@ p {
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
     .portfolio-item {
-        width: calc(33.33% - 20px); /* 3 cards per row on medium screens */
+        width: calc(33.33% - 20px);
+
     }
+
+
 }
+
 
 @media (max-width: 768px) {
     .portfolio-item {
-        width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+        width: calc(50% - 20px);
     }
+
+    .button {
+        padding: 8px 16px;
+        /* Decrease button size for smaller screens */
+        font-size: 16px;
+        /* Decrease font size for smaller screens */
+    }
+
 }
+
 
 @media (max-width: 480px) {
     .portfolio-item {
-        width: calc(100% - 20px); /* 1 card per row on even smaller screens */
+        width: calc(100% - 20px);
+    }
+
+    .button {
+        padding: 8px 16px;
+        /* Decrease button size for screens 480px or less */
+        font-size: 16px;
+        /* Decrease font size for screens 480px or less */
+    }
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#skills h2 {
+    color: #ffffff;
+    font-size: 40px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.skill {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    background-color: transparent;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.rating-container {
+    background-color: transparent;
+    padding: 2px;
+    border: 2px solid #ffffff;
+}
+
+.rating {
+    width: 0;
+    background-color: #0056b3;
+    height: 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 1s ease;
+}
+
+
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        width: 70%;
     }
 }
