@@ -5,25 +5,42 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Default style for all screens */
 body {
-    padding: 0;
-    margin: 0;
-    background-color: #000000;
-
+    background: linear-gradient(297deg, #2e0469, #2e0469, #000000, #000000);
+    background-size: 240% 240%;
+    animation: gradient-animation 4s ease infinite;
 }
 
-/* Media query for smaller screens (mobile devices) */
-@media (max-width: 768px) {
-    body {
-        background-size: 100% auto;
-        /* Set background size to cover full width */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        background-size: 320% 320%;
+        /* Adjust background size for smaller screens */
+    }
+}
 
+/* Responsive design for larger screens */
+@media (min-width: 1024px) {
+    body {
+        background-size: 200% 200%;
+        /* Adjust background size for larger screens */
+    }
+}
 
-/* Header styles */
 header {
     width: 100%;
     color: #fff;
@@ -590,6 +607,8 @@ h2 {
     text-align: center;
     padding: 10px;
     border-radius: 5px;
+    border: 2px solid #ffffff;
+
 }
 
 .rating-container {
@@ -600,7 +619,6 @@ h2 {
 
 .rating {
     width: 0;
-    background-color: #0056b3;
     height: 20px;
     border-radius: 8px;
     color: white;
@@ -609,6 +627,23 @@ h2 {
     justify-content: center;
     align-items: center;
     transition: width 1s ease;
+    background: linear-gradient(297deg, #cbcfeb, #8921ff);
+    background-size: 120% 120%;
+    animation: gradient-animation 1s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -622,5 +657,102 @@ h2 {
 
     .skill {
         width: 70%;
+    }
+}
+
+/* Styling for the Header */
+.header {
+    text-align: center;
+    /* Center-align the content */
+    padding: 20px;
+    /* Add padding for spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+}
+
+.header h1 {
+    font-family: 'Roboto Slab', serif;
+
+    font-size: 36px;
+    /* Font size for the title */
+    margin: 0 auto;
+    /* Center-align the h1 element */
+    display: table;
+    /* Center-align the h1 element (alternative method) */
+}
+
+/* Blog Section Styles */
+#blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.blog {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in;
+}
+
+.blog:hover {
+    transform: scale(1.05);
+}
+
+.blog img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.blog h2 {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Paragraph Container Styles */
+.blog p {
+    color: #666;
+    font-size: 14px;
+    /* Smaller font size for paragraphs */
+    overflow: hidden;
+    /* Hide the overflow content */
+    flex: 1;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    text-overflow: ellipsis;
+    /* Add ellipsis (...) for text that overflows */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .blog {
+        width: calc(50% - 20px);
+        /* Adjust for two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog {
+        width: calc(100% - 20px);
+        /* Full-width on even smaller screens */
     }
 }

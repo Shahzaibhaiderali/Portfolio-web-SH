@@ -36,3 +36,5 @@ window.addEventListener('resize', checkSkills);
 // Initial check
 checkSkills();
 
+
+
