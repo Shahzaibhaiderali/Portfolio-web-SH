@@ -6,7 +6,7 @@
 }
 /* Add this CSS animation class */
 .animate {
-    animation: fade-in 1s ease-in-out;
+    animation: fade-in 3s ease-in-out;
 }
 
 @keyframes fade-in {
@@ -19,10 +19,8 @@
         transform: translateY(0);
     }
 }
-
-
 body {
-    background: linear-gradient(297deg, #007BFF,  #000000,  #000000, #007BFF);
+    background: linear-gradient(297deg, #007BFF, #000000, #000000, #007BFF);
     background-size: 240% 240%;
     animation: gradient-animation 4s ease infinite;
 }
@@ -48,15 +46,6 @@ body {
         /* Adjust background size for smaller screens */
     }
 }
-
-/* Responsive design for larger screens */
-@media (min-width: 1024px) {
-    body {
-        background-size: 200% 200%;
-        /* Adjust background size for larger screens */
-    }
-}
-
 header {
     width: 100%;
     color: #fff;
@@ -882,7 +871,6 @@ button:hover {
 .contact-info {
     margin-top: 20px;
     text-align: center;
-    font-size: 18px;
     border: 2px solid #fff;
 }
 
@@ -890,6 +878,7 @@ button:hover {
     text-decoration: none;
     color: #ffffff; /* Link color */
     font-weight: bold;
+    font-size: 15px;
 }
 
 .contact-info a:hover {
@@ -898,12 +887,12 @@ button:hover {
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .contact-info {
-        font-size: 16px; /* Reduce font size on smaller screens */
+        font-size: 8px; /* Reduce font size on smaller screens */
     }
 }
 @media (max-width: 440px) {
     .contact-info {
-        font-size: 10px; /* Reduce font size on smaller screens */
+        font-size: 8px; /* Reduce font size on smaller screens */
     }
 }
 
