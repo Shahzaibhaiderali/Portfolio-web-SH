@@ -4,9 +4,25 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+/* Add this CSS animation class */
+.animate {
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 body {
-    background: linear-gradient(297deg, #2e0469, #2e0469, #000000, #000000);
+    background: linear-gradient(297deg, #007BFF,  #000000,  #000000, #007BFF);
     background-size: 240% 240%;
     animation: gradient-animation 4s ease infinite;
 }
@@ -96,7 +112,8 @@ ul.nav a:hover {
     padding-left: 20px 10px 20px 10px;
     margin: 8px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 100;
+    display: none;
 
 }
 
@@ -224,17 +241,44 @@ ul.nav a:hover {
     }
 }
 
-/* Styling for "Web Developer" */
 .name h2 {
     font-weight: medium;
-    font-size: 30px;
-    /* Set to medium */
+    font-size: 20px;
     color: white;
-    /* Set the text color to white */
     margin-top: 14px;
-    font-family: 'Roboto Slab', serif;
     padding-left: 10px;
-    /* Add space above the text */
+    font-family: 'Poppins', sans-serif;
+
+}
+.name h2 span {
+    color: rgb(255, 255, 255);
+    color: -moz-radial-gradient(circle, rgb(247, 247, 247) 26%, rgb(255, 255, 255) 82%);
+    color: -webkit-radial-gradient(circle, rgb(0, 81, 131) 26%, rgb(253, 241, 241) 82%);
+    color: radial-gradient(circle, rgb(255, 255, 255) 26%, rgb(0, 76, 163) 82%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3b7ba2", endColorstr="#ba474b", GradientType=1);
+    display: inline-block;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(1em);
+    animation: textAnimation 6s linear infinite;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes textAnimation {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(1em);
+        color: ;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Additional styling for the gold hand icon */
@@ -306,12 +350,19 @@ ul.nav a:hover {
     text-decoration: none;
     font-size: 30px;
     color: #fff;
+    transition: color 0.3s; /* Add a smooth color transition */
 }
 
 /* Add bounce animation to social icons */
 .social-icon i {
     animation: bounce 2s infinite;
 }
+
+/* Add a hover effect to change the color on hover */
+.social-icons a:hover {
+    color: #007BFF; /* Change the color to your desired hover color */
+}
+
 
 @keyframes bounce {
 
@@ -324,33 +375,34 @@ ul.nav a:hover {
         transform: translateY(-10px);
     }
 }
-
-/* Media query for even smaller screens (mobiles) */
-@media (max-width: 480px) {
-    .name h1 {
-        font-size: 24px;
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens here */
+    .profile-section {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center text on smaller screens */
     }
-
-    .name h2 {
-        font-size: 16px;
-        margin-top: 5px;
+    .name h1, .name h2 {
+        font-size: 24px; /* Reduce font size for smaller screens */
     }
-
-    .download-button button {
-        font-size: 16px;
-        padding: 8px 16px;
+    .social-icons {
+        margin-top: 20px; /* Add space below the text on smaller screens */
     }
-
-    .social-icons ul {
-        flex-direction: row;
-        /* Restore horizontal layout for social icons */
-    }
-
-    .icon-container i {
-        font-size: 28px;
-        margin: 5px;
-    }
+    /* Fluid typography for the name */
+.name h1 {
+    font-size: 4vw; /* Use viewport width as a unit for font size */
 }
+
+/* Fluid typography for the job title */
+.name h2 {
+    font-size: 18px; /* Use viewport width as a unit for font size */
+}
+.profile-section {
+    max-width: 1000px; /* Adjust the max-width to your preference */
+    margin: 0 auto; /* Center the content on larger screens */
+}
+
+}
+
 
 
 /* Default styles for the image */
@@ -375,7 +427,7 @@ ul.nav a:hover {
 /* Media query for smaller screens (tablets and mobiles) */
 @media (max-width: 768px) {
     .image-container img {
-        max-width: 80%;
+        max-width: 100%;
         /* Reduce the image's max width for smaller screens */
     }
 }
@@ -509,7 +561,7 @@ h2 {
 }
 
 .portfolio-item img {
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .button {
@@ -562,9 +614,9 @@ h2 {
     }
 
     .button {
-        padding: 8px 16px;
+        padding: 2px 4px;
         /* Decrease button size for smaller screens */
-        font-size: 16px;
+        font-size: 10px;
         /* Decrease font size for smaller screens */
     }
 
@@ -573,13 +625,13 @@ h2 {
 
 @media (max-width: 480px) {
     .portfolio-item {
-        width: calc(100% - 20px);
+        width: calc(70% - 20px);
     }
 
     .button {
-        padding: 8px 16px;
+        padding: 4px 8px;
         /* Decrease button size for screens 480px or less */
-        font-size: 16px;
+        font-size: 14px;
         /* Decrease font size for screens 480px or less */
     }
 }
@@ -741,18 +793,134 @@ h2 {
     text-overflow: ellipsis;
     /* Add ellipsis (...) for text that overflows */
 }
-
-/* Media Queries for Responsiveness */
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .blog {
         width: calc(50% - 20px);
-        /* Adjust for two columns on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .blog {
-        width: calc(100% - 20px);
-        /* Full-width on even smaller screens */
+        width: 100%; /* Make the blogs take full width on smaller screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+#contact {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+form {
+    text-align: left;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 70%;
+    }
+}
+@media (max-width: 480px) {
+    #contact {
+        padding: 10px;
+    }
+
+    .contact-container {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #fff;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #ffffff; /* Link color */
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .contact-info {
+        font-size: 16px; /* Reduce font size on smaller screens */
+    }
+}
+@media (max-width: 440px) {
+    .contact-info {
+        font-size: 10px; /* Reduce font size on smaller screens */
+    }
+}
+
+footer {
+    text-align: center;
+    color: #fff; /* Text color for the copyright notice */
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* Reduce font size on smaller screens */
     }
 }
