@@ -54,16 +54,14 @@ header {
     align-items: center;
     padding: 10px 20px;
     z-index: 2;
+   
 }
-
-.logo a {
-    font-size: 25px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-family: 'Roboto Slab', serif;
-    color: #ffffff;
-    text-decoration: none;
-
+/* Style for the logo in the navbar */
+.logo img {
+    width: 250px; /* Set the logo size to your preferred medium size */
+    height: auto;
+    padding-left: 18px;
+    margin-top: 8px; /* Maintain aspect ratio */
 }
 
 ul.nav {
@@ -72,6 +70,7 @@ ul.nav {
     margin: 0;
     padding: 0;
     z-index: 2;
+
 
 }
 
@@ -85,6 +84,7 @@ ul.nav a {
     color: #fff;
     text-decoration: none;
     transition: all 0.3s;
+    
 
     /* Add a smooth transition effect */
 }
