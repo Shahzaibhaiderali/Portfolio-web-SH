@@ -180,18 +180,6 @@ ul.nav a:hover {
     padding: 20px 10px 20px 10px;
     padding-left: 20px;
 }
-.name {
-    position: relative;
-}
-
-.wave-image {
-    position: absolute;
-    top: -20px; /* Adjust the top value to move the image up */
-    width: 100px; /* Adjust the width to your desired size */
-    z-index: -1; /* Position the image behind the text */
-}
-
-
 .name h1 {
     font-weight: bold;
     /* Make the text bold */
@@ -380,7 +368,6 @@ ul.nav a:hover {
 }
 
 @media (max-width: 768px) {
-
     /* Adjust styles for smaller screens here */
     .profile-section {
         flex-direction: column;
