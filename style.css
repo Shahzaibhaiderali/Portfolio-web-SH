@@ -60,8 +60,6 @@ header {
 .logo img {
     width: 250px; /* Set the logo size to your preferred medium size */
     height: auto;
-    padding-left: 18px;
-    margin-top: 8px; /* Maintain aspect ratio */
 }
 
 ul.nav {
@@ -411,13 +409,13 @@ ul.nav a:hover {
     /* Remove any extra space below the image */
     margin: 0 auto;
     /* Center the image horizontally within its container */
+    margin: ;
 }
 
 /* Media query for smaller screens (tablets and mobiles) */
 @media (max-width: 768px) {
     .image-container img {
         max-width: 100%;
-        /* Reduce the image's max width for smaller screens */
     }
 }
 
