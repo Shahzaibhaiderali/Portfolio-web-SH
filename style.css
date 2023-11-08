@@ -4,9 +4,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 /* Add this CSS animation class */
 .animate {
-    animation: fade-in 3s ease-in-out;
+    animation: fade-in 4s ease-in-out;
 }
 
 @keyframes fade-in {
@@ -14,13 +15,15 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 body {
-    background: linear-gradient(297deg, #007BFF, #000000, #000000, #007BFF);
+    background: linear-gradient(297deg,  #000000, #23002c, #000000, #000000);
     background-size: 240% 240%;
     animation: gradient-animation 4s ease infinite;
 }
@@ -46,6 +49,7 @@ body {
         /* Adjust background size for smaller screens */
     }
 }
+
 header {
     width: 100%;
     color: #fff;
@@ -54,11 +58,13 @@ header {
     align-items: center;
     padding: 10px 20px;
     z-index: 2;
-   
+
 }
+
 /* Style for the logo in the navbar */
 .logo img {
-    width: 250px; /* Set the logo size to your preferred medium size */
+    width: 250px;
+    /* Set the logo size to your preferred medium size */
     height: auto;
 }
 
@@ -68,8 +74,6 @@ ul.nav {
     margin: 0;
     padding: 0;
     z-index: 2;
-
-
 }
 
 ul.nav li {
@@ -82,9 +86,6 @@ ul.nav a {
     color: #fff;
     text-decoration: none;
     transition: all 0.3s;
-    
-
-    /* Add a smooth transition effect */
 }
 
 /* Apply hover effect */
@@ -101,13 +102,11 @@ ul.nav a:hover {
     cursor: pointer;
     z-index: 100;
     display: none;
-
 }
 
 /* Set color for the icons based on their type */
 .fa-house {
     color: #f39c12;
-
 }
 
 .fa-user {
@@ -135,8 +134,10 @@ ul.nav a:hover {
     cursor: pointer;
 }
 
+/* Media query for small screens (e.g., mobile devices) */
 @media (max-width: 768px) {
     ul.nav {
+        background-color: #000000; /* Add background color for small screens */
         display: none;
         position: fixed;
         top: 0;
@@ -177,9 +178,20 @@ ul.nav a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px 10px 20px 10px;
+    padding-left: 20px;
+}
+.name {
+    position: relative;
 }
 
-/* CSS for the text animation */
+.wave-image {
+    position: absolute;
+    top: -20px; /* Adjust the top value to move the image up */
+    width: 100px; /* Adjust the width to your desired size */
+    z-index: -1; /* Position the image behind the text */
+}
+
+
 .name h1 {
     font-weight: bold;
     /* Make the text bold */
@@ -237,6 +249,7 @@ ul.nav a:hover {
     font-family: 'Poppins', sans-serif;
 
 }
+
 .name h2 span {
     color: rgb(255, 255, 255);
     color: -moz-radial-gradient(circle, rgb(247, 247, 247) 26%, rgb(255, 255, 255) 82%);
@@ -250,6 +263,7 @@ ul.nav a:hover {
     animation: textAnimation 6s linear infinite;
     z-index: 2;
     font-family: 'Poppins', sans-serif;
+
 }
 
 @keyframes textAnimation {
@@ -337,7 +351,8 @@ ul.nav a:hover {
     text-decoration: none;
     font-size: 30px;
     color: #fff;
-    transition: color 0.3s; /* Add a smooth color transition */
+    transition: color 0.3s;
+    /* Add a smooth color transition */
 }
 
 /* Add bounce animation to social icons */
@@ -347,7 +362,8 @@ ul.nav a:hover {
 
 /* Add a hover effect to change the color on hover */
 .social-icons a:hover {
-    color: #007BFF; /* Change the color to your desired hover color */
+    color: #007BFF;
+    /* Change the color to your desired hover color */
 }
 
 
@@ -362,42 +378,55 @@ ul.nav a:hover {
         transform: translateY(-10px);
     }
 }
+
 @media (max-width: 768px) {
+
     /* Adjust styles for smaller screens here */
     .profile-section {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        text-align: center; /* Center text on smaller screens */
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+        text-align: center;
+        /* Center text on smaller screens */
     }
-    .name h1, .name h2 {
-        font-size: 24px; /* Reduce font size for smaller screens */
+
+    .name h1,
+    .name h2 {
+        font-size: 24px;
+        /* Reduce font size for smaller screens */
     }
+
     .social-icons {
-        margin-top: 20px; /* Add space below the text on smaller screens */
+        margin-top: 20px;
+        /* Add space below the text on smaller screens */
     }
+
     /* Fluid typography for the name */
-.name h1 {
-    font-size: 4vw; /* Use viewport width as a unit for font size */
+    .name h1 {
+        font-size: 4vw;
+        /* Use viewport width as a unit for font size */
+    }
+
+    /* Fluid typography for the job title */
+    .name h2 {
+        font-size: 18px;
+        padding-left: 20px;
+        /* Use viewport width as a unit for font size */
+    }
+
+    .profile-section {
+        max-width: 1000px;
+        /* Adjust the max-width to your preference */
+        margin: 0 auto;
+        /* Center the content on larger screens */
+    }
+
 }
 
-/* Fluid typography for the job title */
-.name h2 {
-    font-size: 18px; /* Use viewport width as a unit for font size */
-}
-.profile-section {
-    max-width: 1000px; /* Adjust the max-width to your preference */
-    margin: 0 auto; /* Center the content on larger screens */
-}
-
-}
-
-
-
-/* Default styles for the image */
 .image-container {
     text-align: center;
     /* Center the image horizontally */
-    margin-top: 20px;
-    /* Add spacing above the image */
+    max-width: 100%;
+    /* Make sure it doesn't exceed its parent's width */
 }
 
 .image-container img {
@@ -408,30 +437,37 @@ ul.nav a:hover {
     display: block;
     /* Remove any extra space below the image */
     margin: 0 auto;
-    /* Center the image horizontally within its container */
-    margin: ;
+    /* Center the image horizontally */
 }
 
-/* Media query for smaller screens (tablets and mobiles) */
+/* Media query for responsiveness */
 @media (max-width: 768px) {
-    .image-container img {
+    .image-container {
         max-width: 100%;
+        /* Reduce the container width on smaller screens */
     }
 }
+
+
+
+
 
 #about {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 20px;
+    padding: 20px 10px 20px 10px;
+    margin: 20px;
 }
 
 .about-left img {
     max-width: 100%;
-    animation: slideIn 2s ease;
+    animation: slideIn 3s ease;
     border: 2px solid transparent;
     border-radius: 10px;
+    padding: 16px 8px 16px 8px;
+    padding-right: 20px;
 }
 
 .about-right {
@@ -443,6 +479,7 @@ h1 {
     letter-spacing: 2px;
     margin: 10px;
     font-family: 'Roboto Slab', serif;
+  
 }
 
 p {
@@ -450,7 +487,8 @@ p {
     letter-spacing: 2px;
     margin: 10px;
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    padding-right: 20px;
+    letter-spacing: 2px;
 }
 
 .icon-container {
@@ -474,7 +512,7 @@ p {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.2s;
-    animation: slideIn 2s ease;
+    animation: slideIn 5s ease;
     /* Apply slide animation to the icons */
 }
 
@@ -562,6 +600,7 @@ h2 {
     margin-right: 10px;
     transition: background-color 0.3s, transform 0.2s;
     font-size: 18px;
+    font-weight: bold;
 }
 
 /* Hover effect for the button */
@@ -646,14 +685,14 @@ h2 {
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid #ffffff;
 
 }
 
 .rating-container {
     background-color: transparent;
     padding: 2px;
-    border: 2px solid #ffffff;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
 }
 
 .rating {
@@ -666,9 +705,10 @@ h2 {
     justify-content: center;
     align-items: center;
     transition: width 1s ease;
-    background: linear-gradient(297deg, #cbcfeb, #8921ff);
+    background: linear-gradient(297deg, #71008d, #21cbff);
     background-size: 120% 120%;
-    animation: gradient-animation 1s ease infinite;
+    animation: gradient-animation 0.5s ease infinite;
+    
 }
 
 @keyframes gradient-animation {
@@ -762,14 +802,14 @@ h2 {
 }
 
 .blog h2 {
-    color: #333;
+    color: #1a1919;
     font-size: 18px;
     margin: 10px 0;
 }
 
 /* Paragraph Container Styles */
 .blog p {
-    color: #666;
+    color: #000000;
     font-size: 14px;
     /* Smaller font size for paragraphs */
     overflow: hidden;
@@ -779,7 +819,10 @@ h2 {
     /* Prevent text from wrapping */
     text-overflow: ellipsis;
     /* Add ellipsis (...) for text that overflows */
+    font-family: 'Poppins', sans-serif;
+
 }
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .blog {
@@ -789,10 +832,13 @@ h2 {
 
 @media (max-width: 480px) {
     .blog {
-        width: 100%; /* Make the blogs take full width on smaller screens */
-        padding: 10px; /* Reduce padding for smaller screens */
+        width: 100%;
+        /* Make the blogs take full width on smaller screens */
+        padding: 10px;
+        /* Reduce padding for smaller screens */
     }
 }
+
 #contact {
     padding: 20px;
     text-align: center;
@@ -806,10 +852,14 @@ h2 {
 
 h1 {
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 form {
     text-align: left;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .form-group {
@@ -820,6 +870,8 @@ label {
     display: block;
     font-weight: bold;
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 input[type="text"],
@@ -829,7 +881,9 @@ textarea {
     padding: 10px;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    
+    font-family: 'Poppins', sans-serif;
+
+
 }
 
 button {
@@ -840,19 +894,24 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    font-weight: bold;
     margin: 20px 0;
     transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
 /* Media queries for different screen sizes */
 @media (max-width: 768px) {
     .contact-container {
         width: 70%;
     }
 }
+
 @media (max-width: 480px) {
     #contact {
         padding: 10px;
@@ -866,48 +925,63 @@ button:hover {
         font-size: 16px;
     }
 }
+
 .contact-info {
     margin-top: 20px;
     text-align: center;
     border: 2px solid #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+}
+
+.contact-info p {
+    margin: 10px 0;
 }
 
 .contact-info a {
     text-decoration: none;
-    color: #ffffff; /* Link color */
+    color: #ffffff;
     font-weight: bold;
     font-size: 15px;
 }
 
 .contact-info a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
-/* Media queries for responsiveness */
+
+/* Media query for responsiveness */
 @media (max-width: 768px) {
     .contact-info {
-        font-size: 8px; /* Reduce font size on smaller screens */
+        font-size: 14px; /* Reduce font size for the contact-info text */
     }
-}
-@media (max-width: 440px) {
-    .contact-info {
-        font-size: 8px; /* Reduce font size on smaller screens */
+
+    .contact-info a {
+        font-size: 12px; /* Reduce the email font size for smaller screens */
     }
 }
 
+
+
+
 footer {
     text-align: center;
-    color: #fff; /* Text color for the copyright notice */
+    color: #fff;
+    /* Text color for the copyright notice */
     padding: 10px 0;
 }
 
 footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     footer {
-        font-size: 12px; /* Reduce font size on smaller screens */
+        font-size: 10px;
+        /* Reduce font size on smaller screens */
     }
 }
