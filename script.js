@@ -76,5 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Hide the loading screen after 5 seconds
+    setTimeout(function () {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
 
-
+        loadingScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+    }, 5000); // 5000 milliseconds = 5 seconds
+});
