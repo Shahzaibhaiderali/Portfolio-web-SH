@@ -7,7 +7,7 @@
 
 /* Add this CSS animation class */
 .animate {
-    animation: fade-in 4s ease-in-out;
+    animation: fade-in 5s ease-in-out;
 }
 
 @keyframes fade-in {
@@ -53,7 +53,7 @@
 body {
     background: linear-gradient(297deg,  #000000, #23002c, #000000, #000000);
     background-size: 240% 240%;
-    animation: gradient-animation 4s ease infinite;
+    animation: gradient-animation 3s ease infinite;
 }
 
 @keyframes gradient-animation {
@@ -527,7 +527,7 @@ p {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.2s;
-    animation: slideIn 5s ease;
+    animation: slideIn 8s ease;
     /* Apply slide animation to the icons */
 }
 
